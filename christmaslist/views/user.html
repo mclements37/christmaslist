@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>User Login and Sessions</title>
+  <link rel="stylesheet" type="text/css" 
+      href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="form-container" ng-controller="myController">
+    <p class="form-header">User Profile</p>
+    <form method="POST" action="/user/update">
+       <label>Username:</label>
+         <input type="text" name="username" 
+                ng-model="user.username" disabled><br>
+       <label>Email:</label>
+         <input type="email" name="email" 
+                ng-model="user.email"><br>
+ <h3>Create your Christmas Top-5 Wishlist</h3>
+       <label>#1:</label>
+         <input type="text" name="color" 
+                ng-model="user.color"><br>
+<label>#2:</label>
+         <input type="text" name="item" 
+                ng-model="user.item"><br>
+<label>#3:</label>
+         <input type="text" name="itemthree" 
+                ng-model="user.itemthree"><br>
+<label>#4:</label>
+         <input type="text" name="itemfour" 
+                ng-model="user.itemfour"><br>
+<label>#5:</label>
+         <input type="text" name="itemfive" 
+                ng-model="user.itemfive"><br>
+       <input class="button" type="submit" value="Save">
+
+
+       
+
+
+
+    </form>       
+  </div>
+  <form method="POST" action="/user/delete">
+
+<a class="button" href="/">Home</a>
+    <input class="button" type="submit" value="Delete User">
+  </form>
+
+
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="/static/js/my_app.js"></script>
+
+
+
+</body>
+</html>

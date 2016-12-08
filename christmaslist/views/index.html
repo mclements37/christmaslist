@@ -1,0 +1,73 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>User Login and Sessions</title>
+  <link rel="stylesheet" type="text/css" 
+      href="/static/css/styles.css" />
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2><%= username %>'s Christmas Wishlist</h2>
+
+
+
+  </div>
+
+
+
+
+
+<ol>
+ <li>  <%= color %></li>
+ <li>  <%= item %></li>
+ <li>  <%= itemthree %></li>
+ <li>  <%= itemfour %></li>
+ <li>  <%= itemfive %></li>
+</ol>  
+
+ <div id="countdowntimer"></div>
+
+<hr>
+<a class="button" href="/user">Modify My List</a>
+<a class="button" href="/logout">Logout</a>
+
+
+
+
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="/static/js/my_app.js"></script>
+<script>
+CountDownTimer('12/25/2016 12:00 AM', 'countdowntimer');
+
+function CountDownTimer(date, id) {
+     var end = new Date(date);
+
+     var second = 1000;
+     var minute = second * 60;
+     var hour = minute * 60;
+     var day = hour * 24;
+     var timer;
+
+     function showRemaining() {
+         var now = new Date();
+         var distance = end - now;
+         
+         var days = Math.floor(distance / day);
+         var hours = Math.floor((distance % day) / hour);
+         var minutes = Math.floor((distance % hour) / minute);
+         var seconds = Math.floor((distance % minute) / second);
+
+         document.getElementById(id).innerHTML = days + ' days, ';
+         document.getElementById(id).innerHTML += hours + ' hours, ';
+         document.getElementById(id).innerHTML += minutes + ' minutes, and ';
+         document.getElementById(id).innerHTML += seconds + ' seconds until christmas!';
+     }
+
+     timer = setInterval(showRemaining, 1000);
+ }
+</script>
+
+
+
+</body>
+</html>
